@@ -13,7 +13,7 @@
 	class={clsx(
 		'flex aspect-square h-16 w-full flex-row items-center gap-4 overflow-clip rounded-md p-2 lg:aspect-auto',
 		active
-			? 'bg-surface-container-highest'
+			? 'bg-primary/20'
 			: 'bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-200 ease-in-out'
 	)}
 >
