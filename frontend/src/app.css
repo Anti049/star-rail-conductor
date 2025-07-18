@@ -7,28 +7,41 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@font-face {
+	font-family: 'HSR';
+	src: url('/fonts/HSR.ttf') format('truetype');
+}
+
 @theme {
 	/* Fonts */
 	--font-sans: 'Plus Jakarta Sans', sans-serif;
 	--font-mono: 'Fira Code', monospace;
 	--font-serif: 'Rubik', serif;
+	--font-hsr: 'HSR', sans-serif;
 
 	/* Element Colors */
-	--color-physical: #979797;
-	--color-fire: #ee473d;
-	--color-ice: #2692d3;
+	--color-physical: #ababab;
+	--color-on-physical: #000000;
+	--color-fire: #f84f36;
+	--color-on-fire: #000000;
+	--color-ice: #47c7fd;
+	--color-on-ice: #000000;
 	--color-lightning: #c65ade;
-	--color-wind: #61cf93;
-	--color-quantum: #6057c9;
-	--color-imaginary: #e6d863;
+	--color-on-lightning: #000000;
+	--color-wind: #00ff9c;
+	--color-on-wind: #000000;
+	--color-quantum: #8872f1;
+	--color-on-quantum: #000000;
+	--color-imaginary: #f4d258;
+	--color-on-imaginary: #000000;
 
 	/* Rarity Colors */
-	--color-rarity-5: #d3b075; /* Gold */
-	--color-rarity-4: #9c65d7; /* Purple */
-	--color-rarity-3: #518fcd; /* Blue */
-	--color-rarity-2: #3e847f; /* Green */
-	--color-rarity-1: #95959a; /* Gray */
-	--color-rarity-0: #d65555; /* Red */
+	--color-rarity-5: #f2b856;
+	--color-rarity-4: #9b51eb;
+	--color-rarity-3: #388fe6;
+	--color-rarity-2: #19a99f;
+	--color-rarity-1: #cdcdcd;
+	--color-rarity-0: #ef3c3c;
 
 	/* Theme Colors */
 	--color-primary: #ffd06f;
@@ -176,6 +189,43 @@
 	}
 	.shadow {
 		box-shadow: 0 2px 4px var(--color-shadow);
+	}
+	/* Elements */
+	.element-physical {
+		background-color: var(--color-physical);
+		color: var(--color-on-physical);
+	}
+	.element-fire {
+		background-color: var(--color-fire);
+		color: var(--color-on-fire);
+	}
+	.element-ice {
+		background-color: var(--color-ice);
+		color: var(--color-on-ice);
+	}
+	.element-lightning {
+		background-color: var(--color-lightning);
+		color: var(--color-on-lightning);
+	}
+	.element-wind {
+		background-color: var(--color-wind);
+		color: var(--color-on-wind);
+	}
+	.element-quantum {
+		background-color: var(--color-quantum);
+		color: var(--color-on-quantum);
+	}
+	.element-imaginary {
+		background-color: var(--color-imaginary);
+		color: var(--color-on-imaginary);
+	}
+}
+
+/* General-Purpose Utility Classes */
+@layer utilities {
+	/* <a> that only has text as a child (e.g. <a>Link</a>) */
+	a:not(:has(span)) {
+		@apply text-info hover:text-info/80 visited:text-info/80 visited:hover:text-info/60 underline;
 	}
 }
 
