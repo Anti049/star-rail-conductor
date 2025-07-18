@@ -1,0 +1,191 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* Include Tailwind CSS */
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	/* Fonts */
+	--font-sans: 'Plus Jakarta Sans', sans-serif;
+	--font-mono: 'Fira Code', monospace;
+	--font-serif: 'Rubik', serif;
+
+	/* Element Colors */
+	--color-physical: #979797;
+	--color-fire: #ee473d;
+	--color-ice: #2692d3;
+	--color-lightning: #c65ade;
+	--color-wind: #61cf93;
+	--color-quantum: #6057c9;
+	--color-imaginary: #e6d863;
+
+	/* Rarity Colors */
+	--color-rarity-5: #d3b075; /* Gold */
+	--color-rarity-4: #9c65d7; /* Purple */
+	--color-rarity-3: #518fcd; /* Blue */
+	--color-rarity-2: #3e847f; /* Green */
+	--color-rarity-1: #95959a; /* Gray */
+	--color-rarity-0: #d65555; /* Red */
+
+	/* Theme Colors */
+	--color-primary: #ffd06f;
+	--color-on-primary: #402d00;
+	--color-primary-container: #5c4300;
+	--color-on-primary-container: #ffdea1;
+	--color-secondary: #b189fd;
+	--color-on-secondary: #342d40;
+	--color-secondary-container: #4b4358;
+	--color-on-secondary-container: #eadef8;
+	--color-tertiary: #6fc3ff;
+	--color-on-tertiary: #00344f;
+	--color-tertiary-container: #004b70;
+	--color-on-tertiary-container: #cae6ff;
+	--color-error: #ffb4ab;
+	--color-on-error: #690006;
+	--color-error-container: #93000d;
+	--color-on-error-container: #ffdad6;
+	--color-success: #75fab5;
+	--color-on-success: #213529;
+	--color-success-container: #374b3e;
+	--color-on-success-container: #d0e8d6;
+	--color-warning: #c27e3b;
+	--color-on-warning: #47290b;
+	--color-warning-container: #613f1f;
+	--color-on-warning-container: #ffdcc0;
+	--color-info: #63fdde;
+	--color-on-info: #00382e;
+	--color-info-container: #005144;
+	--color-on-info-container: #60fadc;
+	--color-surface-dim: #131313;
+	--color-surface: #131313;
+	--color-surface-bright: #393939;
+	--color-on-surface: #e2e2e2;
+	--color-on-surface-variant: #c6c6c6;
+	--color-surface-container-lowest: #0e0e0e;
+	--color-surface-container-low: #1b1b1b;
+	--color-surface-container: #1f1f1f;
+	--color-surface-container-high: #2a2a2a;
+	--color-surface-container-highest: #353535;
+	--color-outline: #919191;
+	--color-outline-variant: #474747;
+	--color-scrim: #000000;
+	--color-shadow: #000000;
+}
+
+/* Material Design Utility Classes */
+@layer utilities {
+	.primary {
+		background-color: var(--color-primary);
+		color: var(--color-on-primary);
+	}
+	.primary-container {
+		background-color: var(--color-primary-container);
+		color: var(--color-on-primary-container);
+	}
+	.secondary {
+		background-color: var(--color-secondary);
+		color: var(--color-on-secondary);
+	}
+	.secondary-container {
+		background-color: var(--color-secondary-container);
+		color: var(--color-on-secondary-container);
+	}
+	.tertiary {
+		background-color: var(--color-tertiary);
+		color: var(--color-on-tertiary);
+	}
+	.tertiary-container {
+		background-color: var(--color-tertiary-container);
+		color: var(--color-on-tertiary-container);
+	}
+	.error {
+		background-color: var(--color-error);
+		color: var(--color-on-error);
+	}
+	.error-container {
+		background-color: var(--color-error-container);
+		color: var(--color-on-error-container);
+	}
+	.success {
+		background-color: var(--color-success);
+		color: var(--color-on-success);
+	}
+	.success-container {
+		background-color: var(--color-success-container);
+		color: var(--color-on-success-container);
+	}
+	.warning {
+		background-color: var(--color-warning);
+		color: var(--color-on-warning);
+	}
+	.warning-container {
+		background-color: var(--color-warning-container);
+		color: var(--color-on-warning-container);
+	}
+	.info {
+		background-color: var(--color-info);
+		color: var(--color-on-info);
+	}
+	.info-container {
+		background-color: var(--color-info-container);
+		color: var(--color-on-info-container);
+	}
+	.surface-dim {
+		background-color: var(--color-surface-dim);
+		color: var(--color-on-surface);
+	}
+	.surface {
+		background-color: var(--color-surface);
+		color: var(--color-on-surface);
+	}
+	.surface-bright {
+		background-color: var(--color-surface-bright);
+		color: var(--color-on-surface);
+	}
+	.surface-container-lowest {
+		background-color: var(--color-surface-container-lowest);
+		color: var(--color-on-surface);
+	}
+	.surface-container-low {
+		background-color: var(--color-surface-container-low);
+		color: var(--color-on-surface);
+	}
+	.surface-container {
+		background-color: var(--color-surface-container);
+		color: var(--color-on-surface);
+	}
+	.surface-container-high {
+		background-color: var(--color-surface-container-high);
+		color: var(--color-on-surface);
+	}
+	.surface-container-highest {
+		background-color: var(--color-surface-container-highest);
+		color: var(--color-on-surface);
+	}
+	.outline {
+		border-color: var(--color-outline);
+	}
+	.outline-variant {
+		border-color: var(--color-outline-variant);
+	}
+	.scrim {
+		background-color: var(--color-scrim);
+	}
+	.shadow {
+		box-shadow: 0 2px 4px var(--color-shadow);
+	}
+}
+
+/* Path Image Utility Classes */
+.mask-abundance-large {
+	@apply mask-[url('/images/path/large/abundance.png')] mask-cover;
+}
+.mask-abundance-medium {
+	@apply mask-[url('/images/path/medium/abundance.png')] mask-cover;
+}
+.mask-abundance-small {
+	@apply mask-[url('/images/path/small/abundance.png')] mask-cover;
+}
